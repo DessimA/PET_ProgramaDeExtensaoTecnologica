@@ -19,7 +19,19 @@ class SecondPage extends StatelessWidget {
               padding: const EdgeInsets.all(5.0),
               child: ListTile(
                 title: Text(values[index].nome),
-                subtitle: Text(values[index].peso.toString()),
+                subtitle: Text(' Peso: ${values[index].peso}\n Altura: ${values[index].altura}'),
+                leading: const Icon(Icons.account_circle),
+                onTap: () {
+                 showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('IMC'),
+            content: Text((values[index].peso/((values[index].altura)*(values[index].altura))).toStringAsPrecision(4)),
+            icon: const Icon(Icons.info),                    
+          );
+        });
+                },
               ));
         },
       ),
