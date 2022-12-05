@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:calculadora_imc/pessoa.dart';
 
+import 'imc.dart';
+
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key, required this.values}) : super(key: key);
 
@@ -19,18 +21,20 @@ class SecondPage extends StatelessWidget {
               padding: const EdgeInsets.all(5.0),
               child: ListTile(
                 title: Text(values[index].nome),
-                subtitle: Text(' Peso: ${values[index].peso}\n Altura: ${values[index].altura}'),
+                subtitle: Text(
+                    ' Peso: ${values[index].peso}\n Altura: ${values[index].altura}'),
                 leading: const Icon(Icons.account_circle),
                 onTap: () {
-                 showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: const Text('IMC'),
-            content: Text((values[index].peso/((values[index].altura)*(values[index].altura))).toStringAsPrecision(4)),
-            icon: const Icon(Icons.info),                    
-          );
-        });
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          title: const Text('Info'),
+                          content: Text(imcCalc(
+                              values[index].peso, values[index].altura)),
+                          icon: const Icon(Icons.info),
+                        );
+                      });
                 },
               ));
         },
@@ -38,3 +42,4 @@ class SecondPage extends StatelessWidget {
     );
   }
 }
+
