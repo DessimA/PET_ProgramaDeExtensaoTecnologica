@@ -32,7 +32,7 @@ class _AddControleFiscal extends State<AddControleFiscal> {
           backgroundColor: Colors.indigo,
         ),
         body: Container(
-          padding: const EdgeInsets.all(30),
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
               TextField(
@@ -68,9 +68,9 @@ class _AddControleFiscal extends State<AddControleFiscal> {
                   },
                   style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green[800],
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 textStyle: const TextStyle(
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: FontWeight.bold)),
                   child: const Text("Salvar")),
             ],

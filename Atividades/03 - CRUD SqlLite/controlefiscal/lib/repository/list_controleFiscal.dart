@@ -45,7 +45,7 @@ class _ListControleFiscal extends State<ListControleFiscal> {
                   children: slist.map((stuone) {
                     return Card(
                       child: ListTile(
-                        leading: const Icon(Icons.people),
+                        leading: const Icon(Icons.article),
                         title: Text(stuone["categoria"]),
                         subtitle: Text(
                             "\n Valor:${stuone["valor"]} \n Descrição: ${stuone["descricao"]}"),

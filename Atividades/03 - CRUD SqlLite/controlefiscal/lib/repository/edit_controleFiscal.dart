@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../db/db.dart';
+import 'list_controleFiscal.dart';
 
 // ignore: must_be_immutable
 class EditControleFiscal extends StatefulWidget {
@@ -81,14 +82,18 @@ class _EditControleFiscal extends State<EditControleFiscal> {
 
                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                         content: Text("Controle fiscal atualizado!")));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const ListControleFiscal();
+                    }));
                   },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green[800],
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 10),
+                          horizontal: 10, vertical: 5),
                       textStyle: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold)),
-                  child: const Text("Editar controle fiscal")),
+                          fontSize: 14, fontWeight: FontWeight.bold)),
+                  child: const Text("Atualizar")),
             ],
           ),
         ));

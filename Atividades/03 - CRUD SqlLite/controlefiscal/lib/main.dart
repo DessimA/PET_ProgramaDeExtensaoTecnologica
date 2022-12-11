@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Home(),
     );
   }
@@ -33,8 +34,14 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.indigo,
       ),
       body: Container(
-        alignment: Alignment.center,
-        padding: const EdgeInsets.all(30),
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/folders.png'),
+            fit: BoxFit.scaleDown,
+          ),
+        ),
+        alignment: Alignment.bottomCenter,
+        padding: const EdgeInsets.all(10),
         child: Column(children: [
           ElevatedButton(
             onPressed: () {
@@ -44,12 +51,12 @@ class _HomeState extends State<Home> {
               }));
             },
             style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green[800], 
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                textStyle: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold)),
-            child: const Text("Adicionar"), 
+                backgroundColor: Colors.green[800],
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                textStyle:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+            child: const Text("Adicionar"),
           ),
           ElevatedButton(
             onPressed: () {
@@ -60,10 +67,10 @@ class _HomeState extends State<Home> {
             },
             style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue[800],
-                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-                textStyle: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold)),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                textStyle:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
             child: const Text("Listar"),
           ),
         ]),
