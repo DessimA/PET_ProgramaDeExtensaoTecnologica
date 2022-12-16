@@ -1,3 +1,5 @@
+import 'package:controlefiscal/repository/grafico_controleFiscal.dart';
+import 'package:controlefiscal/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:controlefiscal/repository/add_controleFiscal.dart';
 import 'package:controlefiscal/repository/list_controleFiscal.dart';
@@ -72,6 +74,20 @@ class _HomeState extends State<Home> {
                 textStyle:
                     const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
             child: const Text("Listar"),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(
+                AppRoutes.grafico
+              );
+            },
+            style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange[800],
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                textStyle:
+                    const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+            child: const Text("Gráfico"),
           ),
         ]),
       ),
